@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <RouterView />
+    <the-application-shell>
+      <RouterView />
+    </the-application-shell>
   </div>
 </template>
 
@@ -12,3 +14,12 @@
   color: black;
 }
 </style>
+<script>
+import TheApplicationShell from "@/components/TheApplicationShell";
+import { Vue, Component } from "vue-property-decorator";
+@Component({
+  components: {TheApplicationShell}
+})
+export default class App extends Vue {
+}
+</script>

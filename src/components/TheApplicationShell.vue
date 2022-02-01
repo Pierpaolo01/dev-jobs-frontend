@@ -2,6 +2,7 @@
   <div class="min-h-full">
     <div class="pb-32 bg-gray-800">
       <nav class="bg-gray-800">
+
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="border-b border-gray-700">
             <div class="flex justify-between items-center px-4 h-16 sm:px-0">
@@ -10,8 +11,12 @@
                 <h1 class="text-xl font-bold text-white">Dev Jobs</h1>
                 <div class="hidden md:block">
                   <div class="flex items-baseline ml-10 space-x-4">
-                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <router-link :to="{name: 'home'}" class="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md" aria-current="page">Home page</router-link>
+                    <router-link :to="{name: 'home'}" class="px-3 py-2 text-sm font-medium rounded-md" :class="$route.name === 'home'? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'">
+                      Home page
+                    </router-link>
+                    <router-link :to="{name: 'create'}" class="px-3 py-2 text-sm font-medium rounded-md" :class="$route.name === 'create'? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'">
+                      Create a listing
+                    </router-link>
                   </div>
                 </div>
               </div>
@@ -33,14 +38,15 @@
           </div>
         </div>
       </nav>
-      <header class="py-10">
+      <!--Filter bar-->
+      <header class="py-10" v-if="$route.name === 'home'">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <TheFilterBar />
         </div>
       </header>
     </div>
 
-    <main class="-mt-32">
+    <main :class="$route.name === 'home'? '-m-32' : '-mt-12'">
       <div class="px-4 pb-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <!-- Replace with your content -->
         <div class="px-5 py-8 bg-white rounded-lg shadow sm:px-6">

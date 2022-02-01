@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <the-application-shell >
-      <div class="grid grid-cols-3 gap-6">
+      <div class="grid grid-cols-3 gap-x-8 gap-y-10">
         <TheJobListingComponent class="col-span-1"/>
         <TheJobListingComponent class="col-span-1"/>
         <TheJobListingComponent class="col-span-1"/>
@@ -14,8 +12,6 @@
         <TheJobListingComponent class="col-span-1"/>
         <TheJobListingComponent class="col-span-1"/>
       </div>
-    </the-application-shell>
-  </div>
 </template>
 
 <script lang="ts">
