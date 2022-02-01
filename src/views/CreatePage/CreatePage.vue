@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <the-card-component class="mx-auto max-w-2xl space-y-8" title="Create a job posting" description="This will be shown on our homepage for all developers on the internet to see">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Company Logo</label>
+        <div class="mt-1">
+          <input
+              type="text"
+              name="company_logo"
+              class="block p-4 w-full rounded-md border border-gray-500 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              placeholder="https://your-logo.com"
+          >
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Job title</label>
+        <div class="mt-1">
+          <input type="text" name="job_title" class="block p-4 w-full rounded-md border border-gray-500 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Head of Tech">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Country</label>
+        <div class="mt-1">
+          <input type="text" name="location" id="email" class="block p-4 w-full rounded-md border border-gray-500 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="The Netherlands">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Position is fulltime or part-time</label>
+        <ToggleComponent class="mt-1" v-model="isFullTime"/>
+      </div>
+
+      <div class="flex justify-between">
+        <button class="relative inline-flex items-center self-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+          Cancel
+        </button>
+        <button class="relative inline-flex items-center self-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Create new job
+        </button>
+      </div>
+    </the-card-component>
+  </div>
+</template>
+
+<script lang="ts">
+import {Component, Vue} from "vue-property-decorator";
+import TheApplicationShell from "@/components/TheApplicationShell.vue";
+import TheCardComponent from "@/components/TheCardComponent.vue";
+import ToggleComponent from "@/components/ToggleComponent.vue";
+@Component({
+  components: {ToggleComponent, TheCardComponent, TheApplicationShell}
+})
+export default class CreatePage extends Vue {
+  public isFullTime = false;
+}
+</script>
