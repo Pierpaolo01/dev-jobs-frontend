@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomePage from "@/views/HomePage/HomePage.vue";
 import CreatePage from "@/views/CreatePage/CreatePage.vue";
+import UpdatePage from "@/views/UpdatePage/UpdatePage.vue";
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/create',
     name: 'create',
     component: CreatePage,
+  },
+  {
+    path: '/update/:jobId',
+    name: 'update',
+    component: UpdatePage,
   }
 ]
 

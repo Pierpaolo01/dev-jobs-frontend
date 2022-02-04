@@ -5,6 +5,7 @@
             v-for="job in jobListings"
             :key="job.id"
             :job="job"
+            @listing-deleted="getJobs"
         />
       </div>
 </template>
